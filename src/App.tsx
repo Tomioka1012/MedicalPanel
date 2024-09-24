@@ -178,13 +178,13 @@ useEffect(() => {
             </button>
             <div id="dropdownContent" className="dropdown-content">
               <div data-value="1" data-image="/src/img/doctor-1.jpg">
-                <img src="/src/img/doctor-1.jpg" alt="Doctor 1"/> Doctor 1
+                <img src="/img/doctor-1.jpg" alt="Doctor 1"/> Doctor 1
               </div>
               <div data-value="2" data-image="/src/img/doctor-2.jpg">
-                <img src="/src/img/doctor-2.jpg" alt="Doctor 2"/> Doctor 2
+                <img src="/img/img/doctor-2.jpg" alt="Doctor 2"/> Doctor 2
               </div>
               <div data-value="3" data-image="/src/img/doctor-3.jpg">
-                <img src="/src/img/doctor-3.jpg" alt="Doctor 3"/> Doctor 3
+                <img src="/img/img/doctor-3.jpg" alt="Doctor 3"/> Doctor 3
               </div>
            </div>
 </div>
