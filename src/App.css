@@ -1,0 +1,220 @@
+.h-100{
+    height: calc(100% - 64px) !important;
+
+}
+
+.w-custom{
+    width: calc(100% - 240x) !important; ;
+}
+/*active button*/
+.active-button {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(241 245 249 / var(--tw-bg-opacity)) !important;
+    font-weight: 600 !important;
+}
+/*Active page*/
+.active-page{
+    --tw-bg-opacity: 1;
+    background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
+input:focus, textarea:focus, select:focus,
+input:active, textarea:active, select:active {
+    outline: none;
+    box-shadow: none;
+    border-color: initial; /* O cualquier color que desees */
+}
+/*Side bar*/
+.profile-photo{
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+}
+/*Home*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-button {
+    background-color: #f1f1f1;
+    color: black;
+    padding: 6px 9px;
+    border-radius: 0.25rem;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    width: 162px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+}
+
+  .dropdown-button img {
+    height: 26px;
+    width: 26px;
+    margin-right: 10px;
+    border-radius: 5rem;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 156px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border: 1px solid #ddd;
+    margin: 2px;
+    border-radius: 15px;
+  }
+
+  .dropdown-content div {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .dropdown-content div:hover {
+    background-color: #f1f1f1;
+  }
+
+  .dropdown-content img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 50rem;
+  }
+
+  .dropdown.show .dropdown-content {
+    display: block;
+  }
+
+.hero-container{
+    background-image: url('/src/img/hero.jpg');
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+    min-height:280px;
+    position: relative;
+}
+
+.hero-container::after{
+    content:'A place to you and your patients';
+	position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+	color:white;
+    font-size: calc(1.375rem + 1.5vw) !important;
+    font-weight: bold;
+    text-align: center;
+
+}
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        "s4 s4"
+        "s2 s2"
+        "s1 s1";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    padding: 20px;
+    min-height: 350px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.s1, .s2, .s4 {
+    background-color:white ;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccd1d1;
+    min-height: 180px ;
+}
+.s1 img, .s2 img, .s4 img {
+    width: 130px;
+}
+
+
+.s1 {
+    grid-area: s1;
+}
+
+.s2 {
+    grid-area: s2;
+}
+
+
+.s4 {
+    grid-area: s4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*patients*/
+.patients-list{
+    min-width: 755px !important;
+}
+
+/*-----------------------------------------------------------------------*/
+/*--------------------btn carmesí----------------------------*/
+/*
+boton- empresas
+boton- empresas/nueva empresa
+*/
+.btn-crimson {
+    background-color: #FD1153 !important;
+    color: #F2F2F2 !important;
+}
+.btn-crimson:hover, .btn-crimson:active, .btn-crimson:focus {
+    background-color: #D3194D !important;
+}
+
+/*-------------------- btn morado--------------------------*/
+/*
+boton - empresas
+boton- cenros de trabajo
+boton- usuarios
+*/
+.btn-purple-heart {
+    background-color: #9228BC !important;
+    color: #F2F2F2 !important;
+}
+.btn-purple-heart:hover, .btn-purple-heart:active, .btn-purple-heart:focus{
+    background-color: #8600BC !important;
+   
+}
+/*BREAKPOINTS*/
+@media (min-width: 768px) {
+    .s1 img, .s2 img, .s4 img {
+        width: 160px;
+    }
+
+}
+@media (min-width: 992px) {
+    .grid-container {
+        grid-template-areas: 
+            "s4 s1"
+            "s4 s2";
+    }
+    .s1 img, .s2 img{
+        width: 140px;
+    }
+    .s4  img{
+        width: 250px;
+    }
+    .s1, .s2, .s4 {
+        min-height: 130px ;
+    }
+
+}
+
