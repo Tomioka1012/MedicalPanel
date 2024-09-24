@@ -50,8 +50,7 @@ useEffect(() => {
   }
   //console.log(doctor);
 }, [doctorActive, fetchDoctor,fetchDoctors])
-console.log("doctorActive:", doctorActive);
-console.log("doctorImage:", `doctor${doctorActive}`);
+
 /* */
  // Este useEffect asegura que el dropdown, button y content existan antes de intentar usarlos
  useEffect(() => {
@@ -77,6 +76,7 @@ console.log("doctorImage:", `doctor${doctorActive}`);
   button.addEventListener('click', () => {
     dropdown.classList.add('show');
   });
+
 
   // Handle option selection
   content.addEventListener('click', function (e: MouseEvent) {
@@ -131,6 +131,25 @@ console.log("doctorImage:", `doctor${doctorActive}`);
   };
 }, []);
 /* */
+// Mapeo de doctores a imágenes
+const doctorsimg = {
+  1: doctor1,
+  2: doctor2,
+  3: doctor3,
+};
+
+// Función que retorna la imagen según el doctor activo
+function setImage() {
+  switch(doctorActive){
+    case 1:
+      return doctor1;
+    case 2:
+      return doctor2;
+    case 3:
+      return doctor3;
+    
+  }
+}
 
   /*show a doctor*/
   const handleChangeDoctorId = (doc:number) => {
@@ -197,8 +216,8 @@ console.log("doctorImage:", `doctor${doctorActive}`);
       <div className='sidebar h-screen absolute top-0 start-0 bg-white justify-center sm:justify-start pt-0 w-16 sm:w-52 flex flex-col sm:pt-16 '>
         {/* client information*/}
         <div className='hidden sm:flex flex-col mt-2 '>
-          <div className='rounded-full w-32 h-32 bg-slate-100 mx-auto profile-photo overflow-hidden' style={{ backgroundImage: `url(/src/img/doctor-${doctorActive}.jpg)` }} >
-            
+          <div className='rounded-full w-32 h-32 bg-slate-100 mx-auto profile-photo overflow-hidden' style={{ backgroundImage: `url(${setImage()})` }} >
+              
           </div>
           <div className='text-center mt-3'>
             <p className='font-bold text-xl'>{doctor?.name}</p>
