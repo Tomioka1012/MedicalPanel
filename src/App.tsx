@@ -196,7 +196,7 @@ useEffect(() => {
       <div className='sidebar h-screen absolute top-0 start-0 bg-white justify-center sm:justify-start pt-0 w-16 sm:w-52 flex flex-col sm:pt-16 '>
         {/* client information*/}
         <div className='hidden sm:flex flex-col mt-2 '>
-          <div className='rounded-full w-32 h-32 bg-slate-100 mx-auto profile-photo' style={{ backgroundImage: `url(${doctor?.profilePicture})` }} >
+          <div className='rounded-full w-32 h-32 bg-slate-100 mx-auto profile-photo' style={{ backgroundImage: `url(${doctors[doctorActive]})` }} >
             
           </div>
           <div className='text-center mt-3'>
