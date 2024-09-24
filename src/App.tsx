@@ -5,6 +5,10 @@ import Home from './pages/Home'
 import Patients from './pages/Patients';
 import Appointments from './pages/Appointments';
 import Settings from "./pages/Settings";
+//import images
+import doctor1 from './img/doctor-1.jpg';
+import doctor2 from './img/doctor-2.jpg';
+import doctor3 from './img/doctor-3.jpg';
 
 import { useDoctorStore } from './store/doctorStore';
 import 'react-toastify/ReactToastify.css'
@@ -177,14 +181,14 @@ useEffect(() => {
             <button id="dropdownButton" className="dropdown-button text-gray-700"> Choose a Doctor <i className="fa-solid fa-caret-down ms-3 text-gray-400"></i>
             </button>
             <div id="dropdownContent" className="dropdown-content">
-              <div data-value="1" data-image="/src/img/doctor-1.jpg">
-                <img src="/img/doctor-1.jpg" alt="Doctor 1"/> Doctor 1
+              <div data-value="1" data-image={doctor1}>
+                <img src={doctor1} alt="Doctor 1"/> Doctor 1
               </div>
-              <div data-value="2" data-image="/src/img/doctor-2.jpg">
-                <img src="/img/img/doctor-2.jpg" alt="Doctor 2"/> Doctor 2
+              <div data-value="2" data-image={doctor2}>
+                <img src={doctor2} alt="Doctor 2"/> Doctor 2
               </div>
-              <div data-value="3" data-image="/src/img/doctor-3.jpg">
-                <img src="/img/img/doctor-3.jpg" alt="Doctor 3"/> Doctor 3
+              <div data-value="3" data-image={doctor3}>
+                <img src={doctor3} alt="Doctor 3"/> Doctor 3
               </div>
            </div>
 </div>
