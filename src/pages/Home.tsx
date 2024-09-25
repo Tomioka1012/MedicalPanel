@@ -1,6 +1,8 @@
 import Comment from "../components/Comment"
 import { useDoctorStore } from "../store/doctorStore"
-
+import iconDoctor from './img/icon-doctor.jpg';
+import iconPatient from './img/patient-icon.jpg';
+import iconAppoint from './img/appoint-icon.jpg';
 
 
 const Home = () => {
@@ -26,7 +28,7 @@ const Home = () => {
                                 <p className="font-bold text-lg text-gray-400">{appointments.length} </p>
                             </div>
                             <div className="absolute -bottom-6 right-3">
-                                <img src="/src/img/appoint-icon.png" alt="icon doctor"  />
+                                <img src={iconAppoint} alt="icon doctor"  />
                             </div>
                         </div>
                         <div className="s2 flex flex-col justify-start items-start relative overflow-hidden">
@@ -37,7 +39,7 @@ const Home = () => {
                                     <p className="font-bold text-lg text-gray-400">{patients.length} </p>
                                 </div>
                                 <div className="absolute -bottom-6 right-3">
-                                    <img src="/src/img/patient-icon.png" alt="icon doctor"  />
+                                    <img src={iconPatient} alt="icon doctor"  />
                                 </div>
                             </div>
                             <div className="s4 flex flex-col justify-start items-start relative overflow-hidden">
@@ -48,7 +50,7 @@ const Home = () => {
                                     <p className="font-bold text-lg text-gray-400">Specialist</p>
                                 </div>
                                 <div className="absolute -bottom-6 right-3">
-                                    <img src="/src/img/icon-doctor.png" alt="icon doctor" />
+                                    <img src={iconDoctor} alt="icon doctor" />
                             </div>
                         </div>
                     </div>
