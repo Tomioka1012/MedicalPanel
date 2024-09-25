@@ -1,5 +1,9 @@
 import { useDoctorStore } from "../store/doctorStore"
 import { useState, useEffect } from "react";
+//import images
+import doctor1 from '../img/doctor-1.jpg';
+import doctor2 from '../img/doctor-2.jpg';
+import doctor3 from '../img/doctor-3.jpg';
 
 const Settings = () => {
     const {doctor,editDoctor} = useDoctorStore();
@@ -29,6 +33,20 @@ const Settings = () => {
             profilePicture: doctor?.profilePicture || ''
         });
     }, [doctor]);
+
+    // Función que retorna la imagen según el doctor activo
+    function setImage() {
+        switch(doctor?.id){
+        case 1:
+            return doctor1;
+        case 2:
+            return doctor2;
+        case 3:
+            return doctor3;
+        default:
+            return doctor1;
+        }
+    }
 
     // Función para formatear el número de teléfono
     const formatPhoneNumber = (value: string) => {
@@ -120,7 +138,7 @@ const Settings = () => {
     <>
         <div className="flex flex-col justify-center items-center container md:flex-row md:items-start">
             <div className="p-6  flex flex-col justify-center items-center">
-                <div className="w-60 h-60 mx-auto profile-photo" style={{ backgroundImage: `url(${doctor?.profilePicture})` }}>
+                <div className="w-60 h-60 mx-auto profile-photo" style={{ backgroundImage: `url(${setImage()})` }}>
 
                 </div>
                 <button className=" edit-photo hidden p-2 mt-3 w-60 bg-slate-100 rounded hover:bg-slate-200 text-slate-600 font-medium "
