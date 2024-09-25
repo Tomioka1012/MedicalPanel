@@ -1,8 +1,9 @@
 import Comment from "../components/Comment"
 import { useDoctorStore } from "../store/doctorStore"
-import iconDoctor from './img/icon-doctor.jpg';
-import iconPatient from './img/patient-icon.jpg';
-import iconAppoint from './img/appoint-icon.jpg';
+import iconDoctor from '../img/icon-doctor.png';
+import iconPatient from '../img/patient-icon.png';
+import iconAppoint from '../img/appoint-icon.png';
+
 
 
 const Home = () => {
