@@ -48,26 +48,27 @@ export const useDoctorStore = create <DoctorState>()(devtools((set,get )=>({
   fetchDoctor: async (id: number) => {
     set({ loading: true, error: null });
     try {
-      const response = await axios.get(`https://api.myjson.online/v1/records/99c73509-3aef-4d97-9242-37017fea5395`);
-      //access to doctors
-      const doctorsResponse: Doctor[] = response.data.data.doctors; 
-      //find the specific doctor
-      const doctor = doctorsResponse.find(doc => doc.id === id);
-      //console.log(doctor);
-      if (doctor) {
-          set({ doctor: doctor, loading: false })
-      } else {
-          set({ error: 'User not found', loading: false });
-      }
-  } catch (error) {
-    set({ error: "hubo un error", loading: false });
-  }
+        
+        const response = await axios.get('https://gist.githubusercontent.com/Tomioka1012/89cbcea7b3d0d47e15af36c132d21574/raw/53b6808b41235940474162d11eb500c79973d7f1/gistfile1.txt');
+        const doctorsResponse: Doctor[] = response.data.doctors;
+        const doctor = doctorsResponse.find(doc => doc.id === id);
+        console.log('here the doctor:', doctor);
+        if (doctor) {
+            set({ doctor, loading: false });
+        } else {
+            set({ error: 'Doctor not found', loading: false });
+        }
+    } catch (error) {
+        set({ error: "hubo un error", loading: false });
+    }
   },
   fetchDoctors: async () => {
     set({ loading: true, error: null });
     try {
-      const response = await axios.get(`https://api.myjson.online/v1/records/99c73509-3aef-4d97-9242-37017fea5395`);
-      const doctorsResponse: Doctor[] = response.data.data.doctors; 
+      const response = await axios.get(`https://gist.githubusercontent.com/Tomioka1012/89cbcea7b3d0d47e15af36c132d21574/raw/53b6808b41235940474162d11eb500c79973d7f1/gistfile1.txt`);
+      const doctorsResponse: Doctor[] = response.data.doctors; 
+      console.log('Here the doctorS')
+      console.log(doctorsResponse);
       set({ doctors: doctorsResponse, loading: false });
   } catch (error) {
     set({ error: "hubo un error", loading: false });
@@ -77,7 +78,7 @@ export const useDoctorStore = create <DoctorState>()(devtools((set,get )=>({
   updateDoctor: async (id: number, updatedData: Partial<Doctor>) => {
     try {
       
-      const response = await axios.put(`https://api.myjson.online/v1/records/99c73509-3aef-4d97-9242-37017fea5395/doctors/${id}`, updatedData);
+      const response = await axios.put(`https://gist.githubusercontent.com/Tomioka1012/89cbcea7b3d0d47e15af36c132d21574/raw/53b6808b41235940474162d11eb500c79973d7f1/gistfile1.txt${id}`, updatedData);
       set((state) => ({
         doctors: state.doctors.map((doctor) =>
           doctor.id === id ? { ...doctor, ...updatedData } : doctor
@@ -96,8 +97,8 @@ export const useDoctorStore = create <DoctorState>()(devtools((set,get )=>({
   fetchAppointments: async (id: number) => {
     set({ loading: true, error: null });
       try {
-        const response = await axios.get(`https://api.myjson.online/v1/records/99c73509-3aef-4d97-9242-37017fea5395`);
-        const allAppointments = response.data.data.appointments;
+        const response = await axios.get(`https://gist.githubusercontent.com/Tomioka1012/89cbcea7b3d0d47e15af36c132d21574/raw/53b6808b41235940474162d11eb500c79973d7f1/gistfile1.txt`);
+        const allAppointments = response.data.appointments;
         const doctorAppointments = allAppointments.filter((appointment: any) => appointment.doctorId === id);
         set({ appointments: doctorAppointments, loading: false });
       } catch (error) {
@@ -107,8 +108,8 @@ export const useDoctorStore = create <DoctorState>()(devtools((set,get )=>({
 
    fetchpatients: async (id: number) => {
     try {
-      const response = await axios.get(`https://api.myjson.online/v1/records/99c73509-3aef-4d97-9242-37017fea5395`);
-      const allPatients = response.data.data.patients;
+      const response = await axios.get(`https://gist.githubusercontent.com/Tomioka1012/89cbcea7b3d0d47e15af36c132d21574/raw/53b6808b41235940474162d11eb500c79973d7f1/gistfile1.txt`);
+      const allPatients = response.data.patients;
       const doctorPatients = allPatients.filter((patient: any) => patient.doctorId === id);
       set({ patients: doctorPatients, loading: false });
     } catch (error) {
@@ -118,8 +119,8 @@ export const useDoctorStore = create <DoctorState>()(devtools((set,get )=>({
   getpatientById: async (id:number) =>{
     set({ loading: true, error: null });
     try {
-      const response = await axios.get(`https://api.myjson.online/v1/records/99c73509-3aef-4d97-9242-37017fea5395`);
-      const allPatients = response.data.data.patients;
+      const response = await axios.get(`https://gist.githubusercontent.com/Tomioka1012/89cbcea7b3d0d47e15af36c132d21574/raw/53b6808b41235940474162d11eb500c79973d7f1/gistfile1.txt`);
+      const allPatients = response.data.patients;
       const currentPatient = allPatients.find((patient: any) => patient.id === id);
       set({ currentPatient, loading: false });
     } catch (error) {
@@ -154,8 +155,8 @@ export const useDoctorStore = create <DoctorState>()(devtools((set,get )=>({
   getAppointmentById: async (id:number) =>{
     set({ loading: true, error: null });
     try {
-      const response = await axios.get(`https://api.myjson.online/v1/records/99c73509-3aef-4d97-9242-37017fea5395`);
-      const allAppointments = response.data.data.appointments;
+      const response = await axios.get(`https://gist.githubusercontent.com/Tomioka1012/89cbcea7b3d0d47e15af36c132d21574/raw/53b6808b41235940474162d11eb500c79973d7f1/gistfile1.txt`);
+      const allAppointments = response.data.appointments;
       const appointment = allAppointments.find((appointment: any) => appointment.id === id);
       set({ currentAppointment: appointment, loading: false });
     } catch (error) {
@@ -190,8 +191,8 @@ export const useDoctorStore = create <DoctorState>()(devtools((set,get )=>({
     if (!doctor) {
       throw new Error("Doctor not found"); 
     }
-    const response = await axios.get(`https://api.myjson.online/v1/records/99c73509-3aef-4d97-9242-37017fea5395`);
-    const allPatients = response.data.data.patients;
+    const response = await axios.get(`https://gist.githubusercontent.com/Tomioka1012/89cbcea7b3d0d47e15af36c132d21574/raw/53b6808b41235940474162d11eb500c79973d7f1/gistfile1.txt`);
+    const allPatients = response.data.patients;
 
     const patient = allPatients.find((p: any) => p.id == id);
     
@@ -223,8 +224,8 @@ createAppointment: async (appoint) => {
       idAppoint = generateThreeDigitId();
 
       try {
-        const response = await axios.get(`https://api.myjson.online/v1/records/99c73509-3aef-4d97-9242-37017fea5395`);
-        const appointments = response.data.data.appointments;
+        const response = await axios.get(`https://gist.githubusercontent.com/Tomioka1012/89cbcea7b3d0d47e15af36c132d21574/raw/53b6808b41235940474162d11eb500c79973d7f1/gistfile1.txt`);
+        const appointments = response.data.appointments;
 
         idExists = appointments.some((appointment: Appointment) => appointment.id === idAppoint);
 
@@ -262,8 +263,8 @@ createPatient: async (data) => {
       idPatient = generateThreeDigitId();
 
       try {
-        const response = await axios.get(`https://api.myjson.online/v1/records/99c73509-3aef-4d97-9242-37017fea5395`);
-        const patients = response.data.data.patients;
+        const response = await axios.get(`https://gist.githubusercontent.com/Tomioka1012/89cbcea7b3d0d47e15af36c132d21574/raw/53b6808b41235940474162d11eb500c79973d7f1/gistfile1.txt`);
+        const patients = response.data.patients;
 
         idExists = patients.some((patient: Patient) => patient.id === idPatient);
 
